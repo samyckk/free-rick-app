@@ -3,11 +3,51 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+// import Navbar from './components/Navbar;
+import News from './components/News';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <News category="general"/>,
+  },
+  {
+    path: "general",
+    element: <News category="general"/>,
+  },
+  {
+    path: "sports",
+    element: <News category="sports"/>,
+  },
+  {
+    path: "technology",
+    element: <News category="technology"/>,
+  },
+  {
+    path: "science",
+    element: <News category="science"/>,
+  },
+  {
+    path: "health",
+    element: <News category="health"/>,
+  },
+  {
+    path: "business",
+    element: <News category="business"/>,
+  },
+  {
+    path: "entertainment",
+    element: <News category="entertainment"/>,
+  },
+  
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}>
+    <App /></RouterProvider>
   </React.StrictMode>
 );
 
