@@ -10,6 +10,10 @@ const router = createBrowserRouter([
     element: <News category="general" />,
   },
   {
+    path: "/Rick-News",
+    element: <News category="general" />,
+  },
+  {
     path: "general",
     element: <News category="general" />,
   },
@@ -42,6 +46,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}> </RouterProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
