@@ -21,7 +21,7 @@
         <div className="nextBtn">
           <button
             type="button"
-            disabled={page >= Math.ceil(totalP / 15)}
+            // disabled={page >= Math.ceil(totalP / 15)}
             onClick={handleNextCall}
             className={`text-white ${
               page >= Math.ceil(totalP / 15)
