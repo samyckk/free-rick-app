@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import NewsItem from "./NewsItem";
-import Load from "./Load";
+
 import Navbar from "./Navbar";
 
 function News({ category }) {
@@ -23,8 +23,8 @@ function News({ category }) {
         category.charAt(0).toUpperCase() + category.slice(1)
       }`;
     }
-
     fetchNews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   const fetchMoreData = async () => {
@@ -56,7 +56,7 @@ function News({ category }) {
         dataLength={articles.length}
         next={fetchMoreData}
         hasMore={page < Math.ceil(totalP / 15)}
-        loader={<Load />}
+
         endMessage={
           <p style={{ textAlign: "center" }}>
             <b>Yay! You have seen it all</b>
