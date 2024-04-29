@@ -5,15 +5,13 @@ import NewsItem from "./NewsItem";
 import Navbar from "./Navbar";
 
 function News({ category }) {
-  const apiKey = "e349a462053b4aa9ac6792cc68c137c4"; //alwaystom
-  // const apiKey = "8725b8acf4924d0786ab9245075dd7e0"; //samyck
   const [page, setPage] = useState(1);
   const [articles, setArticle] = useState([]);
   const [totalP, setTotalP] = useState(0);
 
   useEffect(() => {
     async function fetchNews() {
-      let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=15`;
+      let url = `https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`;
       let data = await fetch(url);
       let parsedData = await data.json();
       console.log(parsedData);
@@ -27,21 +25,21 @@ function News({ category }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
-  const fetchMoreData = async () => {
-    // Fetch more news data
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}&page=${
-      page + 1
-    }&pageSize=15`;
-    let data = await fetch(url);
-    let parsedData = await data.json();
+  // const fetchMoreData = async () => {
+  //   // Fetch more news data
+  //   let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}&page=${
+  //     page + 1
+  //   }&pageSize=15`;
+  //   let data = await fetch(url);
+  //   let parsedData = await data.json();
 
-    setPage(page + 1);
+  //   setPage(page + 1);
 
-    // Concatenate new articles with the existing ones
-    // setArticle(articles.concat(parsedData.articles));
-    setArticle([...articles, ...parsedData.articles]);
-    console.log("done");
-  };
+  //   // Concatenate new articles with the existing ones
+  //   // setArticle(articles.concat(parsedData.articles));
+  //   setArticle([...articles, ...parsedData.articles]);
+  //   console.log("done");
+  // };
 
   return (
     <>
@@ -54,7 +52,7 @@ function News({ category }) {
 
       <InfiniteScroll
         dataLength={articles.length}
-        next={fetchMoreData}
+        // next={fetchMoreData}
         hasMore={page < Math.ceil(totalP / 15)}
 
         endMessage={
