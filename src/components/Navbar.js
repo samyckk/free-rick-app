@@ -5,11 +5,13 @@ function Navbar() {
   const menuIcon= document.querySelector("#menu");
   const [menu, setmenu] = useState("close");
   const [dis, setDis] = useState("hidden");
+  const [category, setCategory] = useState("general");
 
   function handleMenu(){
     setmenu("close");
     menuIcon.setAttribute("srcSet", "https://cdn.icon-icons.com/icons2/916/PNG/512/Menu_icon_icon-icons.com_71858.png");
     setDis("hidden");
+    console.log(category);
   }
 
   function onToggleMenu() {
@@ -52,8 +54,8 @@ function Navbar() {
               <li>
                 <Link
                   to="/general"
-                  onClick={handleMenu}
-                  className="block py-2 px-3  bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
+                  onClick={() => { handleMenu(); setCategory("general"); }}
+                  className={`block py-2 px-3 ${category === "general" ? "md:text-blue-500 bg-blue-500" : ""}   rounded md:hover:text-blue-500 hover:bg-gray-700 md:hover:bg-transparent md:bg-transparent md:p-0 `}
                   aria-current="page"
                 >
                   General
@@ -62,8 +64,9 @@ function Navbar() {
               <li>
                 <Link
                   to="/sports"
-                  onClick={handleMenu}
-                  className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
+                  onClick={() => { handleMenu(); setCategory("sports"); }}
+                  className={`block py-2 px-3 rounded md:border-0 ${category === "sports" ? "md:text-blue-500 bg-blue-500"  : ""} md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:md:hover:bg-transparent md:bg-transparent `}
+
                 >
                   Sports
                 </Link>
@@ -72,8 +75,8 @@ function Navbar() {
               <li>
                 <Link
                   to="/technology"
-                  onClick={handleMenu}
-                  className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
+                  onClick={() => { handleMenu(); setCategory("technology"); }}
+                  className={`block py-2 px-3 rounded md:border-0 ${category === "technology" ? "md:text-blue-500 bg-blue-500" : ""} md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:md:hover:bg-transparent md:bg-transparent`}
                 >
                   Tech
                 </Link>
@@ -81,8 +84,8 @@ function Navbar() {
               <li>
                 <Link
                   to="/science"
-                  onClick={handleMenu}
-                  className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
+                  onClick={() => { handleMenu(); setCategory("science"); }}
+                  className={`block py-2 px-3 rounded md:border-0 ${category === "science" ? "md:text-blue-500 bg-blue-500" : ""} md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:md:hover:bg-transparent md:bg-transparent`}
                 >
                   Science
                 </Link>
@@ -90,8 +93,8 @@ function Navbar() {
               <li>
                 <Link
                   to="/health"
-                  onClick={handleMenu}
-                  className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
+                  onClick={() => { handleMenu(); setCategory("health"); }}
+                  className={`block py-2 px-3 rounded md:border-0 ${category === "health" ? "md:text-blue-500 bg-blue-500" : ""} md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:md:hover:bg-transparent md:bg-transparent`}
                 >
                   Health
                 </Link>
@@ -99,8 +102,8 @@ function Navbar() {
               <li>
                 <Link
                   to="/business"
-                  onClick={handleMenu}
-                  className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
+                  onClick={() => { handleMenu(); setCategory("business"); }}
+                  className={`block py-2 px-3 rounded md:border-0 ${category === "business" ? "md:text-blue-500 bg-blue-500" : ""} md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:md:hover:bg-transparent md:bg-transparent`}
                 >
                   Business
                 </Link>
@@ -108,8 +111,8 @@ function Navbar() {
               <li>
                 <Link
                   to="/entertainment"
-                  onClick={handleMenu}
-                  className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
+                  onClick={() => { handleMenu(); setCategory("entertainment"); }}
+                  className={`block py-2 px-3 rounded md:border-0 ${category === "entertainment" ? "md:text-blue-500 bg-blue-500" : ""} md:p-0 md:hover:text-blue-500 hover:bg-gray-700 hover:md:hover:bg-transparent md:bg-transparent`}
                 >
                   Entertainment
                 </Link>
