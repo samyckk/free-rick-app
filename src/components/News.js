@@ -45,7 +45,7 @@ function News({ category }) {
     <>
       <Navbar />
       <div className="flex justify-center align-middle m-12 mt-28">
-        <h1 className="md:text-6xl font-bold text-lg">
+        <h1 className="md:text-6xl font-bold text-lg text-white">
           Top Headlines - {category.charAt(0).toUpperCase() + category.slice(1)}
         </h1>
       </div>
