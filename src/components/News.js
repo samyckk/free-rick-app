@@ -5,9 +5,9 @@ import NewsItem from "./NewsItem";
 import Navbar from "./Navbar";
 
 function News({ category }) {
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   const [articles, setArticle] = useState([]);
-  const [totalP, setTotalP] = useState(0);
+  // const [totalP, setTotalP] = useState(0);
 
   useEffect(() => {
     async function fetchNews() {
@@ -16,7 +16,7 @@ function News({ category }) {
       let parsedData = await data.json();
       console.log(parsedData);
       setArticle(parsedData.articles);
-      setTotalP(parseInt(parsedData.totalResults));
+      // setTotalP(parseInt(parsedData.totalResults));
       document.title = `Rick-News - ${
         category.charAt(0).toUpperCase() + category.slice(1)
       }`;
@@ -50,17 +50,7 @@ function News({ category }) {
         </h1>
       </div>
 
-      <InfiniteScroll
-        dataLength={articles.length}
-        // next={fetchMoreData}
-        hasMore={page < Math.ceil(totalP / 15)}
-
-        endMessage={
-          <p style={{ textAlign: "center" }}>
-            <b>Yay! You have seen it all</b>
-          </p>
-        }
-      >
+      
         <div
           id="startNews"
           className="flex justify-center flex-wrap w-full flex-row"
@@ -86,7 +76,6 @@ function News({ category }) {
             </div>
           ))}
         </div>
-      </InfiniteScroll>
     </>
   );
 }
