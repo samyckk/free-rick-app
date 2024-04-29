@@ -6,10 +6,16 @@ function Navbar() {
   const [menu, setmenu] = useState("close");
   const [dis, setDis] = useState("hidden");
 
+  function handleMenu(){
+    setmenu("close");
+    menuIcon.setAttribute("srcSet", "https://cdn.icon-icons.com/icons2/916/PNG/512/Menu_icon_icon-icons.com_71858.png");
+    setDis("hidden");
+  }
+
   function onToggleMenu() {
     if(menu === "close"){
       setmenu("open");
-      menuIcon.setAttribute("srcSet", "https://cdn.icon-icons.com/icons2/950/PNG/512/cross-symbol_icon-icons.com_74149.png")
+      menuIcon.setAttribute("srcSet", "https://cdn.icon-icons.com/icons2/912/PNG/512/cancel-cross_icon-icons.com_71726.png")
       setDis("");
       console.log("cope");
     }
@@ -27,6 +33,7 @@ function Navbar() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 w-full">
           <Link
             to="/"
+            onClick={handleMenu}
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
@@ -38,13 +45,14 @@ function Navbar() {
               Rick-News
             </span>
           </Link>
-          <img id="menu" srcSet="https://cdn.icon-icons.com/icons2/916/PNG/512/Menu_icon_icon-icons.com_71858.png" onClick={onToggleMenu} alt="menu-card" className="text-3xl h-32 cursor-pointer md:hidden "/>
+          <img id="menu" srcSet="https://cdn.icon-icons.com/icons2/916/PNG/512/Menu_icon_icon-icons.com_71858.png" onClick={onToggleMenu} alt="menu-card" className="text-3xl cursor-pointer md:hidden h-12"/>
           
           <div className= {`w-full md:block md:w-auto ${dis}`} id="navbar-default">
             <ul className="md:items-center md:text-center font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
               <li>
                 <Link
                   to="/general"
+                  onClick={handleMenu}
                   className="block py-2 px-3  bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   aria-current="page"
                 >
@@ -54,6 +62,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/sports"
+                  onClick={handleMenu}
                   className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
                 >
                   Sports
@@ -63,6 +72,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/technology"
+                  onClick={handleMenu}
                   className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
                 >
                   Tech
@@ -71,6 +81,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/science"
+                  onClick={handleMenu}
                   className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
                 >
                   Science
@@ -79,6 +90,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/health"
+                  onClick={handleMenu}
                   className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
                 >
                   Health
@@ -87,6 +99,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/business"
+                  onClick={handleMenu}
                   className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
                 >
                   Business
@@ -95,6 +108,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/entertainment"
+                  onClick={handleMenu}
                   className="block py-2 px-3  rounded   md:border-0  md:p-0  md:hover:text-blue-500 hover:bg-gray-700 hover: md:hover:bg-transparent"
                 >
                   Entertainment
