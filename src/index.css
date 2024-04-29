@@ -1,3 +1,8 @@
+
+body{
+    background-color: rgba(0, 0, 0, 0.963);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
