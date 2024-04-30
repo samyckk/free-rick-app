@@ -11,7 +11,6 @@ function Navbar() {
     setmenu("close");
     menuIcon.setAttribute("srcSet", "https://cdn-icons-png.flaticon.com/512/2099/2099192.png");
     setDis("hidden");
-    console.log(category);
   }
 
   function onToggleMenu() {
@@ -19,14 +18,12 @@ function Navbar() {
       setmenu("open");
       menuIcon.setAttribute("srcSet", "https://cdn.icon-icons.com/icons2/912/PNG/512/cancel-cross_icon-icons.com_71726.png")
       setDis("");
-      console.log("cope");
     }
     else{
       setmenu("close");
       menuIcon.setAttribute("srcSet", "https://cdn-icons-png.flaticon.com/512/2099/2099192.png")
       setDis("hidden");
     }
-    console.log("done");
   }
 
   return (
