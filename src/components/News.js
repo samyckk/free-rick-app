@@ -14,7 +14,6 @@ function News({ category }) {
       let url = `https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`;
       let data = await fetch(url);
       let parsedData = await data.json();
-      console.log(parsedData);
       setArticle(parsedData.articles);
       // setTotalP(parseInt(parsedData.totalResults));
       document.title = `Rick-News - ${
